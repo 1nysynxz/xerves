@@ -1,0 +1,288 @@
+/* ─────────────────────────────────────────────
+   XERVES PORTFOLIO — overview.css
+   Hero / Overview section styles
+───────────────────────────────────────────── */
+
+/* ── HERO WRAPPER ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding: 120px 80px 80px;
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── BACKGROUND GRID ── */
+.hero-bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%);
+}
+
+/* ── AMBIENT GLOW ── */
+.hero-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 70%);
+  top: -200px;
+  left: -100px;
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.08); opacity: 0.7; }
+}
+
+/* ── HERO CONTENT ── */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  max-width: 560px;
+}
+
+/* ── AVAILABILITY BADGE ── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #34D399;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+  letter-spacing: 0.03em;
+  animation: slide-down 0.6s ease both;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34D399;
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52,211,153,0.6); }
+  50%       { opacity: 0.5; box-shadow: 0 0 0 6px rgba(52,211,153,0); }
+}
+
+/* ── HERO TITLE ── */
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  animation: slide-up 0.7s ease 0.1s both;
+}
+
+/* ── HERO SUBTITLE ── */
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 600;
+  color: #9D5FF5;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+  animation: slide-up 0.7s ease 0.2s both;
+}
+
+/* ── HERO DESC ── */
+.hero-desc {
+  font-size: 1rem;
+  color: #8B85AA;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  animation: slide-up 0.7s ease 0.3s both;
+}
+
+/* ── HERO ACTIONS ── */
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  animation: slide-up 0.7s ease 0.4s both;
+}
+
+/* ── HERO STATS ── */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  animation: slide-up 0.7s ease 0.5s both;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-num {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -1px;
+  line-height: 1;
+  background: linear-gradient(135deg, #9D5FF5 0%, #C084FC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4E4A6A;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(124, 58, 237, 0.2);
+}
+
+/* ── CODE BLOCK ── */
+.hero-code-block {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 380px;
+  background: #0D0D1A;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(124, 58, 237, 0.08),
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(124, 58, 237, 0.12);
+  animation: float 5s ease-in-out infinite, slide-left 0.8s ease 0.2s both;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background: rgba(124, 58, 237, 0.06);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.12);
+}
+
+.code-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.code-dot.red    { background: #F87171; }
+.code-dot.yellow { background: #FBBF24; }
+.code-dot.green  { background: #34D399; }
+
+.code-filename {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: #4E4A6A;
+  margin-left: 8px;
+}
+
+.code-body {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  padding: 24px 28px;
+  color: #F0EEFF;
+  white-space: pre;
+  overflow: auto;
+}
+
+/* Code syntax colours */
+.c-purple { color: #C084FC; }
+.c-violet { color: #9D5FF5; }
+.c-green  { color: #34D399; }
+.c-orange { color: #FB923C; }
+.c-white  { color: #F0EEFF; }
+.c-blue   { color: #60A5FA; }
+
+/* ── KEYFRAMES ── */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── RESPONSIVE HERO ── */
+@media (max-width: 960px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 120px 24px 80px;
+    min-height: auto;
+    gap: 40px;
+  }
+
+  .hero-code-block {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+    animation: slide-up 0.8s ease 0.3s both;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-stats {
+    gap: 16px;
+  }
+  .stat-num { font-size: 1.3rem; }
+  .hero-code-block {
+    display: none;
+  }
+}
